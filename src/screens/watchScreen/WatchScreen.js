@@ -6,7 +6,6 @@ import { useParams } from 'react-router-dom'
 import Comments from '../../components/comments/Comments'
 import VideoHorizontal from '../../components/videoHorizontal/VideoHorizontal'
 import VideoMetaData from '../../components/videoMetaData/VideoMetaData'
-import { Helmet } from 'react-helmet'
 import {
    getRelatedVideos,
    getVideoById,
@@ -32,9 +31,7 @@ const WatchScreen = () => {
 
    return (
       <Row>
-         <Helmet>
-            <title>{video?.snippet?.title}</title>
-         </Helmet>
+ 
          <Col lg={8}>
             <div className='watchScreen__player'>
                <iframe

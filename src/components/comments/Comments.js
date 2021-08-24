@@ -13,8 +13,8 @@ const Comments = ({ videoId, totalComments }) => {
       dispatch(getCommentsOfVideoById(videoId))
    }, [videoId, dispatch])
 
-   const comments = useSelector(state => state.commentList.comments)
-   const { photoURL } = useSelector(state => state.auth?.user)
+   const comments = useSelector(state => state.commentList.comments);
+   const { photoURL } = useSelector(state => state.auth?.user | null);
 
    const [text, setText] = useState('')
 

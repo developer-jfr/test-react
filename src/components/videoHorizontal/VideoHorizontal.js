@@ -7,7 +7,7 @@ import request from '../../api'
 import moment from 'moment'
 import numeral from 'numeral'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
-import { Col, Row } from 'react-bootstrap'
+import { Col, Row , Container} from 'react-bootstrap'
 import { useHistory } from 'react-router-dom'
 
 const VideoHorizontal = ({ video, searchScreen, subScreen }) => {

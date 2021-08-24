@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import './_videoMetaData.scss'
-import moment from 'moment'
 import numeral from 'numeral'
 
 import { MdThumbUp, MdThumbDown } from 'react-icons/md'
@@ -10,7 +9,7 @@ import {
    checkSubscriptionStatus,
    getChannelDetails,
 } from '../../redux/actions/channel.action'
-import HelmetCustom from '../HelmetCustom'
+
 const VideoMetaData = ({ video: { snippet, statistics }, videoId }) => {
    const { channelId, channelTitle, description, title, publishedAt } = snippet
    const { viewCount, likeCount, dislikeCount } = statistics
@@ -33,14 +32,14 @@ const VideoMetaData = ({ video: { snippet, statistics }, videoId }) => {
 
    return (
       <div className='py-2 videoMetaData'>
-         <HelmetCustom title={title} description={description} />
+       
 
          <div className='videoMetaData__top'>
             <h5>{title}</h5>
             <div className='py-1 d-flex justify-content-between align-items-center'>
                <span>
                   {numeral(viewCount).format('0.a')} Views •{' '}
-                  {moment(publishedAt).fromNow()}
+                  {publishedAt}
                </span>
 
                <div>

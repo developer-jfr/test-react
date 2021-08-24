@@ -3,9 +3,7 @@ import {
    CHANNEL_VIDEOS_FAIL,
    CHANNEL_VIDEOS_REQUEST,
    CHANNEL_VIDEOS_SUCCESS,
-   HOME_VIDEOS_FAIL,
-   HOME_VIDEOS_REQUEST,
-   HOME_VIDEOS_SUCCESS,
+ 
    RELATED_VIDEO_FAIL,
    RELATED_VIDEO_REQUEST,
    RELATED_VIDEO_SUCCESS,
@@ -20,51 +18,12 @@ import {
    SUBSCRIPTIONS_CHANNEL_SUCCESS,
 } from '../actionType'
 
-export const homeVideosReducer = (
-   state = {
-      videos: [],
-      loading: false,
-      nextPageToken: null,
-      activeCategory: 'All',
-   },
-   action
-) => {
-   const { type, payload } = action
-
-   switch (type) {
-      case HOME_VIDEOS_SUCCESS:
-         return {
-            ...state,
-            videos:
-               state.activeCategory === payload.category
-                  ? [...state.videos, ...payload.videos]
-                  : payload.videos,
-
-            loading: false,
-            nextPageToken: payload.nextPageToken,
-            activeCategory: payload.category,
-         }
-
-      case HOME_VIDEOS_FAIL:
-         return {
-            ...state,
-            loading: false,
-            error: payload,
-         }
-      case HOME_VIDEOS_REQUEST:
-         return {
-            ...state,
-            loading: true,
-         }
-      default:
-         return state
-   }
-}
 
 export const selectedVideoReducer = (
    state = {
       loading: true,
       video: null,
+      error: ''
    },
    action
 ) => {
@@ -132,6 +91,7 @@ export const searchedVideosReducer = (
    state = {
       loading: true,
       videos: [],
+      error: ''
    },
    action
 ) => {

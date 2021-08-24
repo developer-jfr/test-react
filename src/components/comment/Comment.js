@@ -1,5 +1,4 @@
 import React from 'react'
-import moment from 'moment'
 import './_comment.scss'
 const Comment = ({ comment }) => {
    const {
@@ -18,7 +17,7 @@ const Comment = ({ comment }) => {
          />
          <div className='comment__body'>
             <p className='mb-1 comment__header'>
-               {authorDisplayName} • {moment(publishedAt).fromNow()}
+               {authorDisplayName} 
             </p>
             <p className='mb-0'>{textDisplay}</p>
          </div>

@@ -1,0 +1,41 @@
+.form {
+   flex: 0.6;
+   display: flex;
+   padding: 0.1rem;
+   margin: 0 1rem;
+   border-radius: 3px;
+   border: 1.2px solid;
+   background-color: #fff;
+   
+  
+}
+.form input {
+   
+      width: 100%;
+      border: none;
+      font-weight: 500;
+      background: transparent;
+      padding: 0.3rem;
+      color: #000;
+     
+}
+.form input:focus {
+   outline: none;
+}
+.form button {
+   padding: 0 1.25rem;
+   color: #000;
+   background: transparent;
+   border: none;
+}
+.form__container
+{
+   padding-top: 5%;
+}
+
+.form__fav {
+   padding: 2px;
+}
+.form__fav:hover {
+ opacity: 0.5;
+}

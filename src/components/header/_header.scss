@@ -1,95 +1,109 @@
-@import '../../base.scss';
+@import "../../base.scss";
 
 .header {
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-   padding: 1rem 3rem;
+  padding: 1rem 3rem;
+  background-color: #fff;
+  box-shadow: 1px 2px 9px 9px rgb(228, 228, 228);
+  height: 10vh;
+  width: 100%;
+  color: #fff;
+  position: fixed;
+  top: 0;
 
-   background-color: $black-primary;
+  z-index: 999;
+  &__menu {
+    display: none;
+  }
+  &__logo {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    display: block;
+  }
 
-   height: 10vh;
-   width: 100%;
+  form {
+    flex: 0.6;
+    display: flex;
+    padding: 0.1rem;
+    margin: 0 1rem;
+    border-radius: 3px;
+    border: 1.2px solid;
+    background-color: $black-secondary;
 
-   position: fixed;
-   top: 0;
+    input {
+      width: 100%;
+      border: none;
+      font-weight: 500;
+      background: transparent;
+      padding: 0.3rem;
+      color: $text-color;
 
-   z-index: 999;
-   &__menu {
-      display: none;
-   }
-   &__logo {
-      width: 30px;
-      height: 30px;
+      &:focus {
+        outline: none;
+      }
+    }
+
+    button {
+      padding: 0 1.25rem;
+      color: $text-color;
+      background: transparent;
+      border: none;
+      &:focus {
+        border: none;
+      }
+    }
+  }
+
+  &__icons {
+    flex: 0.15;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    img {
+      border-radius: 50%;
+      width: 40px;
       object-fit: contain;
-      display: block;
-   }
+      margin-left: 5px;
+    }
+  }
 
-   form {
-      flex: 0.6;
-      display: flex;
-      padding: 0.1rem;
-      margin: 0 1rem;
-      border-radius: 3px;
-      border: 1.2px solid;
-      background-color: $black-secondary;
+  &__text {
+    color: rgb(0, 119, 255);
+    overflow: hidden;
+    
+    list-style-type: none;
 
-      input {
-         width: 100%;
-         border: none;
-         font-weight: 500;
-         background: transparent;
-         padding: 0.3rem;
-         color: $text-color;
+    &:focus {
+      color: rgb(0, 0, 0);
+    }
+  }
 
-         &:focus {
-            outline: none;
-         }
-      }
-
-      button {
-         padding: 0 1.25rem;
-         color: $text-color;
-         background: transparent;
-         border: none;
-         &:focus {
-            border: none;
-         }
-      }
-   }
-
-   &__icons {
-      flex: 0.15;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      img {
-         border-radius: 50%;
-         width: 40px;
-         object-fit: contain;
-         margin-left: 5px;
-      }
-   }
+  &__logout {
+    cursor: pointer;
+  }
 }
 
 @media (max-width: $breakpoint-small) {
-   .header {
-      padding: 1rem;
+  .header {
+    padding: 1rem;
 
-      form {
-         flex: 1;
-      }
+    form {
+      flex: 1;
+    }
 
-      &__menu {
-         display: block;
-      }
-      &__logo {
-         display: none;
-      }
+    &__menu {
+      display: block;
+    }
+    &__logo {
+      display: none;
+    }
 
-      &__icons > *:not(img) {
-         display: none;
-      }
-   }
+    &__icons > *:not(img) {
+      display: none;
+    }
+  }
 }
